@@ -1,3 +1,40 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citename{Chen and Lin}2006]{ChenSVMFeatures}
+Yi-Wei Chen and Chih-Jen Lin, 2006.
+\newblock {\em Combining SVMs with Various Feature Selection Strategies}, pages
+  315--324.
+\newblock Springer Berlin Heidelberg.
+
+\bibitem[\protect\citename{Davidson \bgroup et al.\egroup
+  }2017]{Davidson2017AutomatedHS}
+Thomas~J Davidson, Dana Warmsley, Michael~W. Macy, and Ingmar Weber.
+\newblock 2017.
+\newblock Automated hate speech detection and the problem of offensive
+  language.
+\newblock In {\em ICWSM}.
+
+\bibitem[\protect\citename{Luo \bgroup et al.\egroup }2005]{LuoALPlankton}
+Tong Luo, Kurt Kramer, Dmitry~B. Goldgof, Lawrence~O. Hall, Scott Samson,
+  Andrew Remsen, and Thomas Hopkins.
+\newblock 2005.
+\newblock Active learning to recognize multiple types of plankton.
+\newblock {\em Journal of Machine Learning Research}, pages 589--613, April.
+
+\bibitem[\protect\citename{Waseem \bgroup et al.\egroup
+  }2017]{WaseemUnderstandingAbuse}
+Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber.
+\newblock 2017.
+\newblock Understanding abuse: A typology of abusive language detection
+  subtasks.
+\newblock In {\em Proceedings of the First Workshop on Abusive Language
+  Online}, pages 78--84. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Yang \bgroup et al.\egroup }2009]{YangMultiClassAL}
+Bishan Yang, Jian-Tao Sun, Tengjiao Wang, and Zheng Chen.
+\newblock 2009.
+\newblock Effective multi-label active learning for text classification.
+\newblock In {\em Proceedings of the 15th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 917--926. ACM.
+
 \end{thebibliography}
