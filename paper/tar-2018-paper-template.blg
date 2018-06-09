@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tar-2018-paper-template.aux
+The style file: tar2018.bst
+Database file #1: tar2018.bib
+I was expecting a `,' or a `}'---line 61 of file tar2018.bib
+ :  
+ :  author= "Tong Luo and Kurt Kramer and Dmitry B. Goldgof and Lawrence O. Hall and Scott Samson and Andrew Remsen and Thomas Hopkins",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "chomsky-73"
+Warning--I didn't find a database entry for "chave-64"
+Warning--I didn't find a database entry for "feigl-58"
+Warning--I didn't find a database entry for "johnson-etc"
+Warning--I didn't find a database entry for "johnson-howells"
+Warning--I didn't find a database entry for "butcher-81"
+Warning--I didn't find a database entry for "howells-51"
+Warning--I didn't find a database entry for "croft-78"
+You've used 0 entries,
+            2490 wiz_defined-function locations,
+            559 strings with 4583 characters,
+and the built_in function-call counts, 23 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 1
+:= -- 10
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 2
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 2
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)
