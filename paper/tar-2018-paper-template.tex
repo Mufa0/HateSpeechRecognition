@@ -102,18 +102,18 @@ As stated above problem with machine learning is that we need a lot of data to t
 \\Idea of active learning is that in first step we take small subset out of training set, and train our model on it. In next steps we need to calculate probabilities of good estimation of model. Given these probabilities we then choose subset of that data that has the lowest probability of estimation. After that model is trained once again. This continues until maximum number of iteration is reached, metrics are satisfying, or model reached some other condition.
 \\In our work we used $100$ iterations, and lowest $100$ probabilities. These number were chosen because, when tried greater number of new data in training set we would lose precision in calculating how much data we need to have the results satisfying. With these numbers we get desired results after half of iterations, and we kept running other half too see how will model behave.
 
-\begin{table*}[b]
+\begin{table*}[T]
 	\centering
-	\caption{Metric evolving through iterations}
-	\label{tbl:metrics}
-	\begin{tabular}{|lllllllllll|l|l|}
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{|lllllllllllllll|l|l|}
 		\hline
-		& Iteration             & \multicolumn{3}{c}{0}                                                             &                       & \multicolumn{3}{c}{60}                                                            &                       & \multicolumn{3}{c|}{100} \\ \hline
-		\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{P}    & \multicolumn{1}{l|}{R}    & \multicolumn{1}{l|}{F1}   & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{P}    & \multicolumn{1}{l|}{R}    & \multicolumn{1}{l|}{F1}   & \multicolumn{1}{l|}{} & P      & R      & F1     \\ \hline
-		\multicolumn{1}{|l|}{0} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.11} & \multicolumn{1}{l|}{0.04} & \multicolumn{1}{l|}{0.06} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.35} & \multicolumn{1}{l|}{0.20} & \multicolumn{1}{l|}{0.25} & \multicolumn{1}{l|}{} & 0.37   & 0.19   & 0.25   \\ \hline
-		\multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.80} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.85} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.82} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.86} & \multicolumn{1}{l|}{} & 0.82   & 0.91   & 0.86   \\ \hline
-		\multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.47} & \multicolumn{1}{l|}{0.30} & \multicolumn{1}{l|}{0.37} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.53} & \multicolumn{1}{l|}{0.36} & \multicolumn{1}{l|}{0.43} & \multicolumn{1}{l|}{} & 0.51   & 0.36   & 0.42   \\ \hline
-	\end{tabular}
+		& Iteration             & \multicolumn{3}{c}{0}                                                             &                       & \multicolumn{3}{c}{40}                                                            &                       & \multicolumn{4}{c}{60}                                                                                    & \multicolumn{3}{c|}{100} \\ \hline
+		\multicolumn{1}{|l|}{}  & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{P}    & \multicolumn{1}{l|}{R}    & \multicolumn{1}{l|}{F1}   & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{P}    & \multicolumn{1}{l|}{R}    & \multicolumn{1}{l|}{F1}   & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{P}    & \multicolumn{1}{l|}{R}    & \multicolumn{1}{l|}{F1}   & \multicolumn{1}{l|}{} & P      & R      & F1     \\ \hline
+		\multicolumn{1}{|l|}{0} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.11} & \multicolumn{1}{l|}{0.04} & \multicolumn{1}{l|}{0.06} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.23} & \multicolumn{1}{l|}{0.13} & \multicolumn{1}{l|}{0.17} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.35} & \multicolumn{1}{l|}{0.20} & \multicolumn{1}{l|}{0.25} & \multicolumn{1}{l|}{} & 0.37   & 0.19   & 0.25   \\ \hline
+		\multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.80} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.85} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.82} & \multicolumn{1}{l|}{0.90} & \multicolumn{1}{l|}{0.86} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.82} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.86} & \multicolumn{1}{l|}{} & 0.82   & 0.91   & 0.86   \\ \hline
+		\multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.47} & \multicolumn{1}{l|}{0.30} & \multicolumn{1}{l|}{0.37} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.52} & \multicolumn{1}{l|}{0.37} & \multicolumn{1}{l|}{0.43} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.53} & \multicolumn{1}{l|}{0.36} & \multicolumn{1}{l|}{0.43} & \multicolumn{1}{l|}{} & 0.51   & 0.36   & 0.42   \\ \hline
+	\end{tabular*}
 \end{table*}
 
 \\Table \ref{tbl:metrics} show how are metric improved through time. In table \ref{tbl:metrics} we can see that optimal, and peak of model is on $60$ iterations. That's about $6000$ labeled data on which we train our model.
@@ -127,7 +127,13 @@ As stated above problem with machine learning is that we need a lot of data to t
 	\item \textit{5. Go to 2.}
 \end{itemize}
 
+\\In next section, section about Experiments, it is shown that our active learning model, even though it is baseline model, has a lot of potential for future work.
+\section{Experiments}
+\section{Conclusion}
+Today hate speech is a big problem in the world, but detecting it might be even a bigger problem. It's hard for a human to detect the difference between hate speech and just offensive language, and teaching a machine to solve that problem is an interesting and ambitious project. We know that lexical detection methods have a low precision because hate speech can be hidden and sometimes indirect and also they classify all messages containing particular terms as hate speech so we get a lot of fake positive results. Some machine learning methods give better results and that was our point of interest that we used when we started working on this paper.
+We where reading and we tried to recreate the paper \cite{Davidson2017AutomatedHS} where they used Logistic Regression with L2 regularization as machine learning method, but when we tried to recreate the results we ended up with a model that took more than 24 hours to create. Then we realized that semi-supervised active learning method could get us similar results with less time and less data. It's a bit harder to implement active learning but we got what we wanted. We can conclude that active learning can spare us the time of model building, and also the time and resources needed to annotate big dataset, but also the results are a little bit worse when using SVM.
 
+\section{Acknowledgments}
 \bibliographystyle{tar2018}
 \bibliography{tar2018} 
 
