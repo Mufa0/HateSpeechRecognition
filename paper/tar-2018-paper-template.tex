@@ -62,7 +62,8 @@ Answering those questions we can differ four main classes:
 	\item \textit{Directed Explicit}
 	\item \textit{Generalized Explicit}
 \end{itemize}
-\\\cite{ChenSVMFeatures} shows that one can implement feature selection methods into SVM it self. This could possibly make great future work in trying to achieve end-to-end solution for hate speech identification problem, as we encountered problem of high number of features, and high CPU and RAM requirement as result of that. In our paper we used baseline features because we didn't want to focus our selves on feature selection. Given approach in \cite{ChenSVMFeatures} gives us idea how to improve our model later on.
+
+\cite{ChenSVMFeatures} shows that one can implement feature selection methods into SVM it self. This could possibly make great future work in trying to achieve end-to-end solution for hate speech identification problem, as we encountered problem of high number of features, and high CPU and RAM requirement as result of that. In our paper we used baseline features because we didn't want to focus our selves on feature selection. Given approach in \cite{ChenSVMFeatures} gives us idea how to improve our model later on.
 \\Problem of data size and time needed to manually label same data was always been in machine learning. That's why active learning as semi-supervised approach is developed. \cite{LuoALPlankton} proposed new active learning model based on multi-class support vector machines. They showed that there is a way to make SVM work with probabilities and give us proper active learning model. Even though we didn't implement this model, plan is to implement it in the future and test it on state-of-the-art models. Their algorithm works as follows:
 \begin{itemize}
 	\item 1. Start with an initial training set and an unclassified set.
@@ -80,7 +81,7 @@ As seen in Figure\ref{fig:histofdata} data is unevenly distributed. That has big
 \\Using \textit{NLTK} library we removed all classical stop words in English language. After tokenization 50 most frequent words are removed, that allowed us to lower size of our features. That same size was one of the biggest problems in our work.
 We tried doing that on our baselines and got much better results so we used that approach with active learning.
 \\The last thing we had to do is to turn this tokens to vectors.We used TF-IDF vectorizer, from \textit{sklearn} library, to extract features from our text. After this preparations we where ready to train our baseline models and our active learning method.
-\begin{table*}[!t]
+\begin{table*}[t!]
 	\centering
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{lll}
@@ -93,7 +94,7 @@ We tried doing that on our baselines and got much better results so we used that
 	\label{tbl:prepData}
 \end{table*}
 
-\\Table \ref{tbl:prepData} shows the output of our data preparation. After cleaning, tokenization, etc. we got array of words that represents input post in dataset.
+Table \ref{tbl:prepData} shows the output of our data preparation. After cleaning, tokenization, etc. we got array of words that represents input post in dataset.
 
 \section{Model}
 As stated above problem with machine learning is that we need a lot of data to train model properly. Hate speech identification problem is that there is no relevant and good enough database. Database introduced in \cite{Davidson2017AutomatedHS} has lack of equal distribution of data across all classes. To sidestep that problem we decided to go with semi-supervised model. So called active learning.
@@ -102,10 +103,10 @@ As stated above problem with machine learning is that we need a lot of data to t
 \\Idea of active learning is that in first step we take small subset out of training set, and train our model on it. In next steps we need to calculate probabilities of good estimation of model. Given these probabilities we then choose subset of that data that has the lowest probability of estimation. After that model is trained once again. This continues until maximum number of iteration is reached, metrics are satisfying, or model reached some other condition.
 \\In our work we used $100$ iterations, and lowest $100$ probabilities. These number were chosen because, when tried greater number of new data in training set we would lose precision in calculating how much data we need to have the results satisfying. With these numbers we get desired results after half of iterations, and we kept running other half too see how will model behave.
 
-\begin{table*}[T]
+\begin{table*}[t!]
 	\centering
-	\caption{My caption}
-	\label{my-label}
+	\caption{Table shows how precision, recall and F1 score behaves on different iterations.}
+	\label{tbl:Scores}
 	\begin{tabular}{|lllllllllllllll|l|l|}
 		\hline
 		& Iteration             & \multicolumn{3}{c}{0}                                                             &                       & \multicolumn{3}{c}{40}                                                            &                       & \multicolumn{4}{c}{60}                                                                                    & \multicolumn{3}{c|}{100} \\ \hline
@@ -113,12 +114,12 @@ As stated above problem with machine learning is that we need a lot of data to t
 		\multicolumn{1}{|l|}{0} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.11} & \multicolumn{1}{l|}{0.04} & \multicolumn{1}{l|}{0.06} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.23} & \multicolumn{1}{l|}{0.13} & \multicolumn{1}{l|}{0.17} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.35} & \multicolumn{1}{l|}{0.20} & \multicolumn{1}{l|}{0.25} & \multicolumn{1}{l|}{} & 0.37   & 0.19   & 0.25   \\ \hline
 		\multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.80} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.85} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.82} & \multicolumn{1}{l|}{0.90} & \multicolumn{1}{l|}{0.86} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.82} & \multicolumn{1}{l|}{0.91} & \multicolumn{1}{l|}{0.86} & \multicolumn{1}{l|}{} & 0.82   & 0.91   & 0.86   \\ \hline
 		\multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.47} & \multicolumn{1}{l|}{0.30} & \multicolumn{1}{l|}{0.37} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.52} & \multicolumn{1}{l|}{0.37} & \multicolumn{1}{l|}{0.43} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{0.53} & \multicolumn{1}{l|}{0.36} & \multicolumn{1}{l|}{0.43} & \multicolumn{1}{l|}{} & 0.51   & 0.36   & 0.42   \\ \hline
-	\end{tabular*}
+	\end{tabular}
 \end{table*}
 
-\\Table \ref{tbl:metrics} show how are metric improved through time. In table \ref{tbl:metrics} we can see that optimal, and peak of model is on $60$ iterations. That's about $6000$ labeled data on which we train our model.
+Table \ref{tbl:metrics} show how are metric improved through time. In table \ref{tbl:metrics} we can see that optimal, and peak of model is on $60$ iterations. That's about $6000$ labeled data on which we train our model.
 
-\\Active learning algorithm goes like this:
+Active learning algorithm goes like this:
 \begin{itemize}
 	\item \textit{1. Select m size subset from training set}
 	\item \textit{2. Train label spreading model on given subset}
@@ -127,13 +128,37 @@ As stated above problem with machine learning is that we need a lot of data to t
 	\item \textit{5. Go to 2.}
 \end{itemize}
 
-\\In next section, section about Experiments, it is shown that our active learning model, even though it is baseline model, has a lot of potential for future work.
+In next section, section about Experiments, it is shown that our active learning model, even though it is baseline model, has a lot of potential for future work.
 \section{Experiments}
+We compare our active learning model to the model created by \cite{Davidson2017AutomatedHS} and two different baseline models using the same features as our model. One of those models is a logistic regression and the other is an SVM. SVM and Logistic regression were evaluated using nested cross validation while our active learning model was evaluated on a regular cross validation. For our results we use those that gave us the highest F1 score for hate speech class. The results are shown in Table \ref{tbl:scoreAll}. The \cite{Davidson2017AutomatedHS} model was trained using 10000 TF-IDF features including POS taggs and some general information features as tweet length, number of words,etc. Our 3 models used only 1000 TF-IDF features. We can see that because of the lack of features the F1 scores for hate class fall significantly compared to \cite{Davidson2017AutomatedHS} but they are consistant for all 3 models. We assume the reason for this is that the sklearn implementation of TF-IDF vectorizer, used in this paper, takes only top used ngrams from the dataset and this results in a substantial information loss about the hate speech class because of the imbalanced dataset.  To fix this problem, in future work we should either try to “cherry-pick“ ngrams that show in both the hate speech class and offensive language class or use a different set of features. When comparing the F1 score for all classes \cite{Davidson2017AutomatedHS} has an F1 score of 0.9 while our best model is logistic regression with the score of 0.85. Our SVM model has a F1 score of 0.8, which is a considerable drop compared to \cite{Davidson2017AutomatedHS}, while our active learning model's F1 score is only 0.03 behind SVM. Considering that the \cite{Davidson2017AutomatedHS} was trained using a substantially larger set of features, it is expected to have better results. That is why we are going to compare our active learning model to our own implementations of SVM and logistic regression that use the same set of features. All our testing was done on an Intel(R) Core(TM) i5-7200U CPU with 16 GB of RAM. Table \ref{tbl:scoreOur}. shows the difference in F1 scores and time needed to train each model. As we can see the logistic regression class outperforms SVM and active learning model by a large margin. Even though the F1 scores for hate speech class are the same for all three models, the biggest difference is in detecting clean text with F1 scores varying from 0.46 to 0.7. Even though clean text has the biggest varrience between the models, the biggest impact on the total F1 score comes from the offensive language class. The reason for this is the imbalanced dataset where over 70% of the data is classified as offensive language. The result of the imbalanced dataset is that offensive language class has a considerably higher recall than precision while the other two classes have a higher precision than recall.
+\begin{table}[!ht]
+	\centering
+	\caption{Table contains F1 scores for four different models. Column F1(hate) shows F1 scores calculated only on hate speech class while column F1(all)  scores are calculated as average F1 scores on all three classes.}
+	\label{tbl:scoreAll}
+	\begin{tabular}{|l|l|l|}
+		& F1(hate)      & F1(all)       \\
+		Davidson et al.     & \textbf{0,51} & \textbf{0,90} \\
+		Logistic Regression & 0,26          & 0,85          \\
+		SVM                 & 0.26          & 0.80          \\
+		Active Learning     & 0.26          & 0.77         
+	\end{tabular}
+\end{table}
+Even though our active learning model has worse results then the other two models, it is important to mention that it has the smallest differences in precision and recall for each class. Why is this the case? As we mentioned, we chose active learning model as a way to train a model on a much smaller dataset. The model was trained on around 8000 and tested on approximately 14000 tweets. Beacuse of that, the difference in the dataset distribution wasn't as impactfull as it was on the other two models that were trained on 20000 tweets. We believe that given a balanced dataset, all our models would perform much better, but active learning wouldn't need as much data to train it self, which is significant step forward.
+\begin{table}[!t]
+	\centering
+	\caption{Table shows F1 scores for every class individually and for all classes together for each of our models. It also contains estimated average time needed to train one of ten K folds in our cross validation.}
+	\label{tbl:scoreOur}
+	\begin{tabular}{|l|l|l|l|l|l|}
+		& F1(hate)      & F1(offensive) & F1(clean text) & F1(all)       & Training time(minutes) \\
+		Logistic Regression & \textbf{0.26} & \textbf{0.92} & \textbf{0.70}  & \textbf{0.85} & \textbf{6 min}         \\
+		SVM                 & \textbf{0.26} & 0.90          & 0.55           & 0.80          & 70 min                 \\
+		Active Learning     & \textbf{0.26} & 0.87          & 0.46           & 0.77          & 16 min                
+	\end{tabular}
+\end{table}
 \section{Conclusion}
 Today hate speech is a big problem in the world, but detecting it might be even a bigger problem. It's hard for a human to detect the difference between hate speech and just offensive language, and teaching a machine to solve that problem is an interesting and ambitious project. We know that lexical detection methods have a low precision because hate speech can be hidden and sometimes indirect and also they classify all messages containing particular terms as hate speech so we get a lot of fake positive results. Some machine learning methods give better results and that was our point of interest that we used when we started working on this paper.
 We where reading and we tried to recreate the paper \cite{Davidson2017AutomatedHS} where they used Logistic Regression with L2 regularization as machine learning method, but when we tried to recreate the results we ended up with a model that took more than 24 hours to create. Then we realized that semi-supervised active learning method could get us similar results with less time and less data. It's a bit harder to implement active learning but we got what we wanted. We can conclude that active learning can spare us the time of model building, and also the time and resources needed to annotate big dataset, but also the results are a little bit worse when using SVM.
 
-\section{Acknowledgments}
 \bibliographystyle{tar2018}
 \bibliography{tar2018} 
 
