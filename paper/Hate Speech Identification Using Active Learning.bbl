@@ -14,12 +14,31 @@ Thomas~J Davidson, Dana Warmsley, Michael~W. Macy, and Ingmar Weber.
   language.
 \newblock In {\em ICWSM}.
 
+\bibitem[\protect\citename{Hunter}2007]{Matplotlib}
+J.~D. Hunter.
+\newblock 2007.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing In Science \& Engineering}, 9(3):90--95.
+
 \bibitem[\protect\citename{Luo \bgroup et al.\egroup }2005]{LuoALPlankton}
 Tong Luo, Kurt Kramer, Dmitry~B. Goldgof, Lawrence~O. Hall, Scott Samson,
   Andrew Remsen, and Thomas Hopkins.
 \newblock 2005.
 \newblock Active learning to recognize multiple types of plankton.
 \newblock {\em Journal of Machine Learning Research}, pages 589--613, April.
+
+\bibitem[\protect\citename{NLT}2009]{NLTK}
+2009.
+\newblock Natural language toolkit.
+\newblock \url{https://www.nltk.org/}.
+
+\bibitem[\protect\citename{Pedregosa \bgroup et al.\egroup }2011]{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock 2011.
+\newblock {Scikit-learn: Machine Learning in Python }.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
 
 \bibitem[\protect\citename{Waseem \bgroup et al.\egroup
   }2017]{WaseemUnderstandingAbuse}
@@ -29,6 +48,15 @@ Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber.
   subtasks.
 \newblock In {\em Proceedings of the First Workshop on Abusive Language
   Online}, pages 78--84. Association for Computational Linguistics.
+
+\bibitem[\protect\citename{Waskom \bgroup et al.\egroup }2014]{seaborn}
+Michael Waskom, Olga Botvinnik, Paul Hobson, John~B. Cole, Yaroslav Halchenko,
+  Stephan Hoyer, Alistair Miles, Tom Augspurger, Tal Yarkoni, Tobias Megies,
+  Luis~Pedro Coelho, Daniel Wehner, cynddl, Erik Ziegler, diego0020, Yury~V.
+  Zaytsev, Travis Hoppe, Skipper Seabold, Phillip Cloud, Miikka Koskinen, Kyle
+  Meyer, Adel Qalieh, and Dan Allan.
+\newblock 2014.
+\newblock seaborn: v0.5.0 (november 2014), nov.
 
 \bibitem[\protect\citename{Yang \bgroup et al.\egroup }2009]{YangMultiClassAL}
 Bishan Yang, Jian-Tao Sun, Tengjiao Wang, and Zheng Chen.
