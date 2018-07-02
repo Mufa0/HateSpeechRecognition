@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Hate Speech Identification Using Active Learning.aux
 The style file: tar2018.bst
 Database file #1: tar2018.bib
-You've used 9 entries,
+You've used 10 entries,
             2490 wiz_defined-function locations,
-            610 strings with 6728 characters,
-and the built_in function-call counts, 5110 in all, are:
-= -- 497
-> -- 329
+            614 strings with 6825 characters,
+and the built_in function-call counts, 5336 in all, are:
+= -- 521
+> -- 330
 < -- 4
 + -- 122
 - -- 122
-* -- 425
-:= -- 825
-add.period$ -- 35
-call.type$ -- 9
-change.case$ -- 97
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 172
-empty$ -- 313
+* -- 437
+:= -- 850
+add.period$ -- 38
+call.type$ -- 10
+change.case$ -- 102
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 183
+empty$ -- 341
 format.name$ -- 131
-if$ -- 1046
+if$ -- 1100
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 8
-newline$ -- 54
+newline$ -- 59
 num.names$ -- 24
-pop$ -- 115
+pop$ -- 124
 preamble$ -- 1
-purify$ -- 107
+purify$ -- 113
 quote$ -- 0
-skip$ -- 144
+skip$ -- 156
 stack$ -- 0
-substring$ -- 215
-swap$ -- 55
+substring$ -- 220
+swap$ -- 57
 text.length$ -- 4
-text.prefix$ -- 1
+text.prefix$ -- 2
 top$ -- 0
-type$ -- 68
+type$ -- 76
 warning$ -- 0
 while$ -- 32
-width$ -- 12
-write$ -- 124
+width$ -- 13
+write$ -- 135

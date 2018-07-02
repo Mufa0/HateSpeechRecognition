@@ -40,6 +40,11 @@ F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
 \newblock {Scikit-learn: Machine Learning in Python }.
 \newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
 
+\bibitem[\protect\citename{Por}2009]{PorterStemmer}
+2009.
+\newblock Porter stemmer.
+\newblock \url{https://www.nltk.org/_modules/nltk/stem/porter.html}.
+
 \bibitem[\protect\citename{Waseem \bgroup et al.\egroup
   }2017]{WaseemUnderstandingAbuse}
 Zeerak Waseem, Thomas Davidson, Dana Warmsley, and Ingmar Weber.
